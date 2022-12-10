@@ -3,8 +3,8 @@ const fs = require("fs");
 
 // assign the data from txt file into an array
 const array = fs
-    // read data from text file synchronously
-  .readFileSync("day01.txt", { encoding: "utf-8" })
+    // read data from text file synchronously, from the following path
+  .readFileSync("Day1/day01.txt", { encoding: "utf-8" })
     //   split the string into array indices on each new line
   .split("\n")
     // loops through array and parses each string number into an integer
