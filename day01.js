@@ -5,7 +5,7 @@ const fs = require("fs");
 const array = fs
     // read data from text file synchronously
   .readFileSync("day01.txt", { encoding: "utf-8" })
-    //   split the string into array indecies on each new line
+    //   split the string into array indices on each new line
   .split("\n")
     // loops through array and parses each string number into an integer
   .map((x) => parseInt(x));
@@ -24,7 +24,7 @@ const array = fs
     // if current index is greater than the previous index add 1 to the counter
     if (array[i] > array[i-1]){
         firstCount += 1
-     // if current index is less than the pervious index, do nothing
+     // if current index is less than the previous index, do nothing
     } else {
         firstCount
     }
@@ -52,4 +52,3 @@ for (let i = 0; i<=array.length; i++){
 
   // Print the results to the console
   console.log(secondCount)
-
