@@ -13,15 +13,19 @@ const input = fs
   let forward = 0
   let down = 0
 
+    // loop through input and create array from each index that holds the value of direction and move
     for (const position of input){
       const [direction, move] = position.split(" ")
         switch (true) {
+          // if direction is forward add to counter
       case (direction == 'forward'):
         forward += Number(move)
         break
+          // if direction is down add to counter
       case (direction == 'down'):
         down += Number(move)
         break
+          // if direction is up add to counter
       case (direction == 'up'):
         down -= Number(move)
         break

@@ -1,12 +1,12 @@
 const fs = require("fs");
 
 const input = fs
-  .readFileSync("Day6/day06.txt", { encoding: "utf-8" })
+  .readFileSync("2022Day6/day06.txt", { encoding: "utf-8" })
 
 // PART ONE
 
 // intake a string 
-// return the total number of characters iterated over until a length of 4 unique characters is found
+// return the total number of characters iterated over until a length of 4 unique characters is found. Include the 4 unique characters in the total
 
 // holds the length of the sequence we want to evaluate each time
 let firstSequence = 4
@@ -26,7 +26,7 @@ for (let i = firstSequence; i < input.length; i++){
 
 // PART TWO
 
-// return the total number of characters iterated over until a length of 14 unique characters is found
+// return the total number of characters iterated over until a length of 14 unique characters is found. Include the 14 unique characters in the total
 
 let secondSequence = 14
 
