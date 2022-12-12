@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const input = fs
-  .readFileSync("2022Day6/day06.txt", { encoding: "utf-8" })
+  .readFileSync("2022/Day6/day06.txt", { encoding: "utf-8" })
 
 // PART ONE
 

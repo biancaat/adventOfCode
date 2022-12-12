@@ -2,7 +2,7 @@ const fs = require("fs");
 
 // assign data from txt file to input variable
 const input = fs
-  .readFileSync("Day1/day01.txt", { encoding: "utf-8" })
+  .readFileSync("2021/Day1/day01.txt", { encoding: "utf-8" })
   .split("\n")
   .map((x) => parseInt(x));
 
