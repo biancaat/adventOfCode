@@ -4,8 +4,10 @@
 
 ## About
 
-This is a repository filled with some Advent of Code challenges from 2021 and 2022. This is my first time experiencing the Advent of Code. I chose questions that reflect my abilities as well as provide a range of difficulty. 
+This repository contains a selection of the Advent of Code challenges from 2021-2022. It is my first time experiencing the Advent of Code. I chose questions that reflect my abilities and provide a range of difficulties. 
+
+I made an effort to add comments in order to reflect my thought process. 
 
 ## Lessons Learned:
 
-The biggest lesson I learned through these challenges was to have fun! 
+I'm a big fan of the Advent of Code as an interview take-home challenge!
