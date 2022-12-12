@@ -1,70 +1,70 @@
-// allows us to use the file system module to work with files on computer
 const fs = require("fs");
 
-// assign the data from txt file into an array
-const array = fs
-    // read data from text file synchronously
+const input = fs
   .readFileSync("Day2/day02.txt", { encoding: "utf-8" })
-    //   split the string into array indices on each new line
   .split("\n")
 
 //   PART ONE
 
-    // create variables to hold specific positions for the following 
-    let forward = 0
-    let down = 0
+// intake an array of commands. Commands are either 'forward', 'up' or 'down' accompanied by a number value, always positive and whole. 'forward' adds to horizontal position, 'down' adds to depth and 'up' subtracts from depth
+// return the result of the horizontal position and depth
 
-    // for of loop to begin iteration of data from imported text file
-    for (const position of array){
-        // evaluates first case that is true 
+    // variables to hold position values
+  let forward = 0
+  let down = 0
+
+    for (const position of input){
+      const [direction, move] = position.split(" ")
         switch (true) {
-        // if array element includes the case, remove the string and return the integer value of the string number, add the integer to the forward variable
-      case (position.includes('forward')):
-        forward += Number(position.slice(8))
+      case (direction == 'forward'):
+        forward += Number(move)
         break
-        // if array element includes the case, remove the string and return the integer value of the string number, add the integer to the down variable
-      case (position.includes('down')):
-        down += Number(position.slice(5))
+      case (direction == 'down'):
+        down += Number(move)
         break
-        // if array element includes the case, remove the string and return the integer value of the string number, subtract the integer from the down variable
-      case (position.includes('up')):
-        down -= Number(position.slice(3))
+      case (direction == 'up'):
+        down -= Number(move)
         break
       default:
         break
         }
       }
 
-//   log the product of forward and down
- console.log(forward * down)
+  console.log(forward * down)
+
+  // O(n) time complexity
+  // O(1) space complexity  
+
 
 // PART TWO
-    // assign variables to help the value of the following
-    let aim = 0
-    let depth = 0
-    let horizontalPosition = 0
 
-  // for of loop to begin iteration of data from imported text file
-  for (const position of array){
-    // evaluates first case that is true
+// intake an array of commands. Commands are either 'forward', 'up' or 'down' accompanied by a number value, always positive and whole. 'forward' adds to horizontal position AND increases your depth by 'aim' multiplied by the integer value associated with the 'forward' command, 'down' adds to 'aim', 'up' subtracts from 'aim'
+// return the result of the horizontal position and depth
+
+
+  let aim = 0
+  let depth = 0
+  let horizontalPosition = 0
+
+  for (const position of input){
+    const [direction, move] = position.split(" ")
     switch (true) {
-    // if array element includes the case, add the integer from the case to horizontal position and multiply the integer by aim to get the product of depth
-    case (position.includes('forward')):
-        horizontalPosition += Number(position.slice(8))
-        depth += aim * Number(position.slice(8))
+    case (direction == 'forward'):
+        horizontalPosition += Number(move)
+        depth += aim * Number(move)
         break
-    // if array element includes the case, add the integer from the case to aim variable
-    case (position.includes('down')):
-        aim += Number(position.slice(5))
+    case (direction == 'down'):
+        aim += Number(move)
         break
-    // if array element includes the case, subtract the integer from the case to aim variable
-    case (position.includes('up')):
-         aim -= Number(position.slice(3))
+    case (direction == 'up'):
+         aim -= Number(move)
         break
   default:
     break
     }
   }
 
-//  log the product of horizontal position and depth 
- console.log(horizontalPosition * depth) 
+  console.log(horizontalPosition * depth) 
+
+  // O(n) time complexity
+  // O(1) space complexity  

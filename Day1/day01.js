@@ -1,54 +1,52 @@
-// allows us to use the file system module to work with files on computer
 const fs = require("fs");
 
-// assign the data from txt file into an array
-const array = fs
-    // read data from text file synchronously, from the following path
+// assign data from txt file to input variable
+const input = fs
   .readFileSync("Day1/day01.txt", { encoding: "utf-8" })
-    //   split the string into array indices on each new line
   .split("\n")
-    // loops through array and parses each string number into an integer
   .map((x) => parseInt(x));
 
 
 //  PART ONE 
+
 // intake an array of numbers, some numbers are larger or smaller than the last, whole numbers, positive.
 // return the number of times the current number is larger than the previous
 
 
-// assign a counter to a variable
+// create a counter variable
   let firstCount = 0
 
-// loop through the array of numbers
-  for (let i = 0; i<= array.length; i++){
+// loop through the input array
+  for (let i = 0; i<= input.length; i++){
     // if current index is greater than the previous index add 1 to the counter
-    if (array[i] > array[i-1]){
+    if (input[i] > input[i-1]){
         firstCount += 1
-     // if current index is less than the previous index, do nothing
-    } else {
-        firstCount
     }
   }
 
-// Print the results to the console
   console.log(firstCount)
+
+  // O(n) time complexity
+  // O(1) space complexity  
 
 
 //   PART TWO
 
-// create a different counter
+
+// return the number of times the sum of the current 3 numbers in the sliding window of numbers is greater than the sum of the last 3 numbers in the sliding window of numbers. 
+
+
 let secondCount = 0
 
-// loop through array of numbers
-for (let i = 0; i<=array.length; i++){
+for (let i = 0; i<=input.length; i++){
     // if the current sum of the current three elements > than the sum of the last 3 elements add 1 to counter
-    if (array[i+1] + array[i +2] + array[i +3] > array[i] + array[i + 1] + array[i+2]){
+    if (input[i+1] + input[i +2] + input[i +3] > input[i] + input[i + 1] + input[i+2]){
       secondCount +=1
-    //   if not do nothing 
-    }else{
-      secondCount
     }
   }
 
-  // Print the results to the console
   console.log(secondCount)
+
+  // O(n) time complexity
+  // O(1) space complexity  
+
